@@ -45,12 +45,15 @@ $(document).ready(function() {
 	   	
    	});
         
-      	//SOUNDS
-        
-        
-
-     //  
-        
+     $('a#aboutPageLink').click(function(){
+	     $('#aboutPage').toggleClass('hidden');
+	     
+     });
+     
+     $('#aboutPage').click(function(){
+	     $('#aboutPage').toggleClass('hidden');
+	     
+     });   
      
 	
 }); 

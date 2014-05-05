@@ -434,6 +434,37 @@ p {
 	color:#409149;
 }
 
+#aboutPage {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.6);
+	text-align: center;
+	z-index: 10000;
+}
+
+#aboutPageText {
+	line-height: 125%;
+	color: white;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	position: fixed;
+	top: 15%;
+	left: 50%;
+	margin-left: -35%;
+	text-align: left;
+}
+
+#aboutPage img {
+	margin: 10px 0 10px 0;
+}
+
+.hidden {
+	display: none;
+}
 @media screen and (max-width: 999px){
 	#popUpWrapper {
 		width: 800px;
