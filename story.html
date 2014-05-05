@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIGMUND'S QUEST</title>
+    <link rel="stylesheet" href="css/story.css">
+    <script src="js/doT.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/dedalus.js"></script>
+    <script src="js/dedalus-web.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/scripts.js"></script>
+    
+    <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+
+ </head>
+<body>
+    <div id="story">
+
+        <initscript>
+        
+        </initscript>
+
+        <beforeEveryThing>
+        
+        </beforeEveryThing>
+
+        <beforeEveryPageTurn>
+        	
+    		
+        
+        </beforeEveryPageTurn>
+
+        <beforeEveryParagraphShown>
+        	
+        </beforeEveryParagraphShown>
+
+        <afterEveryThing>
+        	   		
+        	
+        </afterEveryThing>
+
+        <afterEveryPageTurn>
+	       	$('html, body').animate({
+	       			scrollTop: $("#wrapper").offset().top 
+	       				}, 500);	
+	       				
+        
+        </afterEveryPageTurn>
+
+        <afterEveryParagraphShown>
+        	
+        </afterEveryParagraphShown>
+
+        <!-- Novel -->
+        <title>SIGMUND'S QUEST</title>
+
+        <!-- Objects -->
+        
+        <obj id="goldPieces" inventoryName="Gold Pieces">
+        
+        	<action id="examine">
+        		<p>A small pile of gold coins, stamped with the face of your father, Völsung, the king of Hunaland.</p>
+        	</action>
+        
+        
+        </obj>
+        
+        
+        <obj id="swordGram" inventoryName="Gram, the Greatsword">
+            <action id="examine">
+                This blade shines with magical brilliance. There are two enormous rubies on its hilt and almost every other part of this magnificent sword is covered in gold.
+            </action>
+            
+            <action id="drop">
+		        <p>This sword is a gift from Odin, the Allfather. Surely it is more precious than mere trash...perhaps you should <interact with="swordDrop">reconsider?</interact></p>
+            </action>
+    
+        </obj>
+        
+        <obj id="swordDrop">
+        
+        <action id="hold on to Gram">
+        	<p>You shake your head violently, unsure of what had come over you to even consider abandoning a gift from Odin himself.</p>
+        
+        </action>
+        
+        <action id="throw Gram aside">
+        {{ story.turnTo('deathByOdin');}}
+        
+
+        	
+        </action>
+        
+        
+        
+        </obj>
+        
+        <obj id="gold" inventoryName="Gold & Silver Ingots">
+         	<action id="examine">
+         		An enormous pile of gold & silver ingots--enough to live comfortably for a very long time.
+         	</action>
+        </obj>
+        
+        <obj id="siggeirLetter" inventoryName="Siggeir's Letter">
+        	<action id="read">
+        		<p>The letter reads, <span class="siggeir">"Dear Sigmund, Signý and I hope this letter finds you well. We would like to invite you and your family to the harvest festival, here in Götaland. We hope to see you and your marvelous sword there."</span></p>
+        		<p>At the bottom is Siggeir's royal seal</p>
+        		<p>The messenger awaits your <interact with="siggeirMessenger">response</interact> patiently, seeming ill at ease, as though he knows the message he has delivered contains unwanted news.</p>
+        	</action>
+        </obj>
+        
+        <obj id="siggeirMessenger" inventoryName="Siggeir's Messenger">
+        		<action id="accept the invitation">
+        		<p>You tell the messenger that you would be delighted to visit your sister and her new husband for the harvest festival. The messenger departs, then you and your family begin preparations for their <turn to="siggeirCastle">journey</turn> to Götaland. You remind your brothers and father that very little time has passed since your nation at the Geats were mortal enemies. You hope for an uneventful celebration, but something deep within your gut gnaws at you as you take your first steps on the road to Siggeir's castle.</p>
+        		</action>
+        		
+        		<action id="refuse the invitation">
+        		<p>You know that to refuse this invitation would be tantamount to insulting Siggeir, something you are hesitant to do. Perhaps you should reconsider...</p>
+        		</action>
+        </obj>
+        
+        <obj id="tokenOfThanks" inventoryName="Token of Thanks">
+        
+        	<action id="examine">
+        		<p>The token appears to be a weathered doll, made of a roughspun material. Emblazoned upon the chest of the figure is a bright rune that you don't recognize.</p>
+        	
+        	</action>
+        
+        </obj>
+        
+        
+        <!-- Characters -->
+        
+        <character id="signy">
+        
+        	<action id="examine">
+        		<p>Your sister looks beautiful in her silken wedding dress. Her blonde hair is pinned up by a comb your mother had given her before she died.</p>
+        	</action>
+        	
+        	<action id="congratulate her">
+        		<p>She beams and says, <span class="signy">"Thank you so much, Sigmund! I know you and Father have had your differences with Siggeir in the past, but I'm glad we could put all of this behind us and celebrate this day together!"</span></p>
+        	</action>
+        	
+        	<action id="ask her how she's feeling">
+        		<span class="signy">"Nervous, but excited!"</span>
+        	</action>
+        </character>
+        
+        <character id="siggeirWedding">
+        
+        	<action id="congratulate him">
+        	
+        		<p>He smiles unctuously, grasps your hand too firmly, and says, <span class="siggeir">"Thank you, oh so much, Sigmund. It is a pleasure to have you, your father, and all nine of your wonderfully...colorful brothers at our wedding. This will truly be the beginning of an era of peace between our kingdoms."</span>
+        		</p>
+        		
+        	</action>
+        	
+        </character>
+        
+        <character id="siggeirWhisper">
+        
+	        <action id="examine">
+	        	<p>There is an eager glow in Siggeir's eye as he approaches you. While he is speaking to you, his hungry gaze never strays from Gram.</p>
+	        </action>
+        </character>
+        
+        
+        <character id="peasantFarmer">
+                
+        	<action id="examine">
+        		<p>The farmer is a rough-looking sort. He has obviously suffered much, and has a sad, weathered face. His sons hide fearfully behind him when they see your party, as though they have encountered strangers on the road before in their journey and been treated poorly.</p>
+        	</action>
+        
+        	<action id="stop and speak with him">
+	        	<p><span class="farmer">"Hail, m'Lord! Far be it for me to presume to tell you what to do, but I would most humbly recommend turning about, if your road leads to you Siggeir's Keep."</span></p> 
+	        	<p>You ask him why the Keep has such a reputation, and he replies <span class="farmer">"The lord of this realm has never been a particularly kind one, but ever since he returned from Hunaland, he has become nasty and cruel. People are talking. He is constantly muttering about some sword and only stops to visit some new horror on his subjects. Property has been stolen, livestock slaughtered, and the Lord's thugs burned my barn down not two days ago, killing my beloved wife. Something about unpaid taxes, or such nonsense. Now, I have nothing but what I can carry and my sons..."</span></p>
+	        	<p><interact with="farmer2">The farmer</interact> seems to have worked himself into a fury, and begins to spit at every mention of Siggeir's name. His children continue to cower behind him. The farmer stands before you as a man who has lost almost everything he has ever cared for in his life.</p>
+        	
+        	</action>
+        	
+        	<action id="continue past him without stopping">
+        		<p>You don't have time to stop and speak with every peasant you encounter on the road, no matter how destitute they may appear. You make your way through the mountain pass to <turn to="siggeirsKeep">Siggeir's Keep</turn>, leaving the peasant behind. The crisp air in the pass invigorates you and your traveling party, and this trip beings to feel more like a vacation with every step.</p>
+        	
+        	</action>
+        
+        </character>
+        
+        
+	        <character id="farmer2">
+	        {{ story.disable('peasantFarmer'); }}
+	        	<action id="scold the farmer for speaking ill of his King">
+	        	{{ story.disable('farmer2'); }}
+	        		<p>You remind the peasant that Siggeir is his King, and that it is not his place to judge the actions of a rightful ruler. He bows and apologizes profusely, making haste to depart before he receives any more of the cruelty he has become so accustomed to. <turn to="siggeirsKeep">Siggeir's Keep</turn> looms in the distance. You and your party set off for the mountain pass, shaking your heads in disbelief at the impudence of the peasants in this land.</p> 
+	        	</action>
+	        	
+	        	<action id="apologize for his mistreatment and give him gold">
+	        	{{ story.disable('peasantFarmer'); }}
+	        	{{ story.removeFromInventory('goldPieces'); }}
+	        	{{ story.putInInventory('swordGram'); }}
+	        	{{ story.putInInventory('tokenOfThanks'); }}
+	        	
+	        	<p>You thank him for his candor, and press several gold pieces into his palm. You tell him that Siggeir is your brother-in-law, therefore you feel personally responsible for each act of cruelty he has visited upon this land. You tell him that you are on your way to Siggeir's Keep and that you intend to confront Siggeir about these injustices personally.</p>
+	        	</p>
+	        	<p><span class="farmer">"Thank you so much, kind Lord. My sons and I will never forget this kindness you have done us. If only my wife were alive to witness such humanity. Gods bless you, Sigmind. Please take this token of my appreciation as thanks. It isn't much, but perhaps it could be useful to you someday."</span> With that, he bows deeply and his sons look up at you with shining eyes filled with hope.</p>
+	        	<p>The farmer departs, and all that remains in front of you in the winding path to <turn to="siggeirsKeep">Siggeir's Keep</turn>. After everything you just heard, it seems as though a dark cloud hangs above the castle. You are wary of what you will find when you arrive in Siggeir's hall.</p>
+	        	
+	        	</action>
+	        
+	        
+	        </character>
+
+        
+        
+        
+       
+
+        <!-- Pages -->
+        <page id="intro">
+        
+        
+            <p>You are at your sister <interact with="signy">Signý's</interact> wedding. She is getting married to <interact with="siggeirWedding">Siggeir</interact>, the King of Götaland, the rival kingdom to the south.
+            </p>
+            
+        </page>
+
+        <page id="weddingFeast" class="first">
+        	{{ story.putInInventory('goldPieces'); }}
+        	
+        
+        	<p>You are in the large dining hall, deep within your father's castle in Hunaland. Your sister is here, as well as your father, Völsung, your nine brothers, all of your father's subjects, and many Geatish guests you don't recognize.
+        	</p>
+            
+            <p>The festivities are just about to begin in celebration of your sister's betrothal, when an <turn to="oldMan">old man</turn> steps forward and starts speaking very loudly, commanding the room's attention. 
+            </p> 
+
+        </page>
+
+        <page id="oldMan">
+        {{ setDifferentImage('img/oldMan.png'); }}
+
+         
+           <p>The old man, a scraggly-looking beggar with an eyepatch, raises his voice and says, <span class="odin">"If you would all accompany me to the courtyard, I have a wedding gift I would like to present."</span>
+           </p>
+           
+           <p>He then walks out of the main hall, walks to a nearby tree, unsheathes a glistening, rune-encrusted sword that seems to pulse with otherworldly power and plunges into the trunk of the tree with one mighty stroke.
+           </p>
+           
+           
+           <p><turn to="swordTree">NEXT</turn></p>
+        </page>
+        
+        <page id="swordTree">
+	        
+	        {{ setDifferentImage('img/swordTree.png'); }}
+	        
+	        <p>The old man casts away his filthy rags to reveal a gleaming golden breastplate and fine clothing.</p>
+	        <p><span class="odin">"It is I, the great god Odin. In honor of the soon-to-be bride and groom, I would like to bestow this gift to whomever is strong enough to claim it as their own! May it bring glory to its rightful owner, always."</span></p>
+	        <p>Then in a brilliant flash of light like the gleam of freshly smithed steel, Odin vanishes with a hearty laugh and the wedding party is left stunned by this display of magical trickery.</p>
+	        <p><turn to="swordPull">NEXT</turn></p>
+        </page>
+        
+        <page id="swordPull">
+        {{ setDifferentImage('img/swordPull.png'); }}
+	        <p>After the shock of the old man's magic wears off, various members of the wedding party try to loose the sword from the trunk of the great tree. Siggeir, your father, and all of your brothers try and fail.</p>
+	        <p>All of their combined efforts in vain, they turn to you and wearily behold you take your attempt at claiming the magnificent weapon. You grasp the <turn to="freeSword">sword</turn> firmly and pull.</p>
+        
+        </page>
+        
+        <page id="freeSword">
+        	{{ setDifferentSigmund('img/swordSigmund.png'); }}
+        	{{ setDifferentImage('img/freeSword.png'); }}
+        	{{ story.putInInventory('swordGram'); }}
+        	
+        	<p>You hold the awesome sword in your hand! The whole party looks on in awe as you declare your victory and name the sword Gram, the Greatsword!</p>
+        	<p><turn to="swordOffer">NEXT</turn></p>
+        	
+        </page>
+        
+        <page id="swordOffer">
+        {{ setDifferentImage('img/swordOffer.png'); }}
+        </p>Everyone swarms around you to marvel at your new weapon. <interact with="siggeirWhisper">Siggeir</interact> approaches you once the excitement has died down a bit and pulls you aside to whisper in your ear.</p>
+        <p><span class="siggeir">"A magnificent feat to be sure! I'm not sure why Odin decided to bless our wedding with his presence and puzzling tricks, but surely it is a good omen. I would like very much to have that sword as a memento. I would more than compensate you for it, of course. Say, three times its weight in silver and gold?"</span></p>
+        	<p><turn to="sellSword">Accept his offer</turn></p>
+        	<p><turn to="keepSword">Refuse his offer</turn></p>
+        </page>
+        
+        <page id="sellSword">
+        	{{ setDifferentImage('img/sellSword.png'); }}
+        	{{ story.removeFromInventory('swordGram'); }}
+        	{{ setDifferentSigmund('img/Sigmund.png'); }}
+        	{{ story.putInInventory('gold'); }}
+        	<p>You sell Gram, the Greatsword to Siggeir, who excitedly wrenches it from your hands and begins brandishing it about wildly, exclaiming, <span class="siggeir">"Now I am the one with Odin's favor! Everyone, drink deeply and feast, for today is truly a blessed day!</span></p>
+        	<p>Everyone else looks puzzled as Siggeir returns to the party with a sword he could not claim as his own, but quickly people's thoughts turn to revelry and the celebration continues.</p>
+        	<turn to="betrayl">NEXT</turn>
+        	
+        </page>
+        
+        <page id="betrayl">
+        {{ setDifferentImage('img/farewell.png'); }}
+        	<p>The rest of the wedding proceeds without event, with much feasting and drinking in celebration of the new husband & wife. Many speeches are made, praising the new peace between Gautland and Haunaland.</p>
+        	
+        	<p> The next morning, you say goodbye to your sister as she leaves for her new home in Guatland. You go to shake Siggeir's hand farewell, and he leans in and beckons you to <turn to="deathByGram">come closer.</turn> </p>
+        </page>
+        
+        <page id="keepSword">
+        {{ setDifferentImage('img/keepSword.png'); }}
+        <p>You tell Siggeir that Gram is a gift from Odin himself, and that you couldn't part with it even if you wanted to. Siggeir stares at you angrily as you explain that you hope this doesn't affect your nations' chances for peace. You turn  and walk back to the party.</p>
+        <p><turn to="farewell">NEXT</turn></p>
+        </page>
+        
+        
+        <page id="farewell">
+        {{ setDifferentImage('img/farewell.png'); }}
+        <p>The rest of the wedding proceeds without event, with much feasting and drinking in celebration of the new husband & wife. Many speeches are made, praising the new peace between Gautland and Hunaland.</p>
+        	
+        	<p> The next morning, you say goodbye to your sister as she leaves for her new home in Götaland. When you shake Siggeir's hand farewell, and he leans in and, in a menacing voice while grasping your hand tightly, <span class="siggeir">"You are lucky that Odin has blessed you with his favor. I hope that you and your wonderful family can visit us in Götaland soon."</span></p>
+        	<turn to="afterWedding">NEXT</turn>
+        </page>
+       
+        <page id="afterWedding">
+        {{ setDifferentImage('img/letterFromSiggeir.png'); }}
+        	<p>Months pass and all is quiet & peaceful. The citizens of Hunaland have enjoyed an unprecedented period of prosperity and the hot summer days are transitioning to crisp autumn nights.</p>
+        	
+        	<p>One morning, a messenger arrives from Götaland, bearing a <interact with="siggeirLetter">letter</interact> from Siggeir.</p> 
+        </page>
+        
+        <page id="siggeirCastle">
+        {{ setDifferentImage('img/peasantMeadow.png'); }}
+        	<p>You are on the way to Siggeir's castle in Götaland.</p>
+        	
+        	<p>You see the red flag of Götaland flapping in the wind atop Siggeir's keep in the distance at the end of a lengthy mountain pass. Along the road, you see a <interact with="peasantFarmer">peasant farmer</interact> and his two young children traveling away from the keep, pulling a large wagon filled with sacks and chests.</p>
+        </page>
+        
+        <page id="siggeirsKeep">
+                {{ setDifferentImage('img/siggiersKeep.png'); }}
+
+        	<p>You are just before the gates of Siggeir's Keep. There are dark clouds surrounding the tower and everywhere you look you see downtrodden people with forlorn faces. You feel a knot in your stomach as you step through the gates. Who know what awaits you...</p>
+        	<p>END OF CHAPTER I</p>
+        
+        </page>
+        
+        <!-- DEATHS -->
+        
+        <page id="deathByGram">
+        {{ story.removeFromInventory('gold');}}
+        {{ setDifferentSigmund('img/deadSigmund.png'); }}
+        {{ setDifferentImage('img/stabbedBySiggeir.png'); }}
+        	<p>Siggeir whispers in your ear while gripping your hand fiercely, <span class="siggeir">"Now that I have your sister and your sword, I have taken everything from you. There is nothing stopping Götaland from ruling supremely and your life is forfeit."</span>
+        	</p>
+        	<p>With that, he draws Gram, the Greatsword and quickly slides it into your unarmored abdomen. You feel an intense, sharp pain and you hear people shouting as you slowly slip into unconsousness.</p>
+        	<p>The last thing you see before close your eyes for the final time is Siggeir leading an army of Geats that seemed to come out of nowhere, plundering your ancestral homeland and slaughtering your family and countrymen with a sword that is rightfully yours.</p>
+        	<p>YOU ARE DEAD. <br><br>GAME OVER.</p>
+        	
+        	{{ story.endGame(); }}
+        </page>
+        
+        <page id="deathByOdin">
+        {{ story.removeFromInventory('goldPieces');}}
+        {{ setDifferentSigmund('img/deadSigmund.png'); }}
+        {{ setDifferentImage('img/deathByOdin.png'); }}
+        <p>You cast aside Gram as though it were a piece of rubbish. The blade clunks to the ground unceremoniously and you instantly regret your actions. An overwhelming sense of dread comes over you and the sky clouds supernaturally quickly overhead.</p>
+        
+        <p>You hear the voice of Odin, the Allfather speak:</p>
+        <p><span class="odin">
+        	"Sigmund, I gave you a blessing that any other man would kill for and you discarded it. This is an insult of the highest degree. I will not stand for it. I stand in judgement of you now, Sigmund, son of Völsung of Hunaland, and I proclaim you guilty of blasphemy."
+        </span>
+        </p>
+        <p>With that, a bolt of lightning sears across the sky and strikes you violently in the chest.
+        </p>
+        <p>YOU ARE DEAD<br><br>GAME OVER</p>
+        
+        {{ story.endGame(); }}
+        
+        </page>
+        
+        
+
+    </div>
+
+    <div id="wrapper">
+        
+	    <div id="background">
+	    	<img id="backgroundImage" alt="the place you are in" src="img/weddingFeast.png">
+	    </div>
+        
+        
+        
+        
+        
+        
+    </div>
+    
+    <div id="popUpWrapper" class="negativeMargin">
+	    <p id="toggle">DIARY</p>
+	    <img id="popUpImg" src="img/blankBook.png">
+            <div id="host"></div>
+
+    
+                    <div id="interactionHost"></div>
+
+
+
+    
+    
+    	
+    	
+    	<div id="inventoryHostWrapper">
+            <h2>Inventory</h2>
+            <div id="inventoryHost"></div>
+        </div>
+    
+    	<div id="imageHostWrapper">
+        	<img alt="portrait of Sigmund" id="Sigmund" src="img/sigmund.png">
+        
+        </div>
+        
+      
+	    
+	
+	    <div id="undoStageHost"></div>
+	
+	    <div id="footer">
+	        <!--<a id="undoHost" href="#">Undo</a> &bull; <a id="saveHost" href="#">Save</a> &bull; <a id="restoreHost" href="#">Restore</a> &bull;--> <a id="resteHost" href="#">Reset</a> 
+	    </div>
+    
+    </div>
+
+    <audio id="impact">
+  <source src="sounds/impact.wav" type="audio/wav">
+  </audio>
+
+    <script>
+        $(function () {
+            new DedalusWeb({
+                domSource         : $('#story'),
+                domTarget         : $('#host'),
+                titleTarget       : $('#title'),
+                inventoryTarget   : $('#inventoryHost'),
+                interactionTarget : $('#interactionHost'),
+                undoTarget        : $('#undoHost'),
+                undoStageTarget   : $('#undoStageHost'),
+                saveTarget        : $('#saveHost'),
+                restoreTarget     : $('#restoreHost'),
+                resetTarget       : $('#resteHost'),
+            });
+        });
+
+    </script>
+</body>
+</html>
