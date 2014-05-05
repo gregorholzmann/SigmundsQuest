@@ -458,6 +458,14 @@ p {
 	text-align: left;
 }
 
+#closeButton {
+	position: absolute;
+	width: 25px;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+}
+
 #aboutPage img {
 	margin: 10px 0 10px 0;
 }
