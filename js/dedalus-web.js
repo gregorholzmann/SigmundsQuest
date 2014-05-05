@@ -240,12 +240,13 @@ var DedalusWeb;
                 this.interactionTarget.find('ul').append(link);
                 this.interactionTarget.find('ul>a').wrap('<li>');
 
+              
                 // Position teh interaction host element under the clicked link
                 // and centered to it
-                this.interactionTarget.css('left', clickedElement.offset().left - (this.interactionTarget.width() / 2) + (clickedElement.width() / 2));
-                this.interactionTarget.css('top',  clickedElement.offset().top + -50);
+                this.interactionTarget.css('left', clickedElement.offset().left);
+                this.interactionTarget.css('top',  clickedElement.offset().top);
                 
-
+                
                 this.interactionTarget.show();
             }
         }

@@ -25,6 +25,11 @@ html, body {
 	font-family: 'Press Start 2P', cursive;
 }
 
+body {
+	background-image: url('../img/clouds.png');
+	width: 100%;
+}
+
 h1 {
 	
 }
@@ -168,6 +173,10 @@ to {top:700px;}
 		text-align: center;
 	}
 	
+	.banner img {
+		width: 100%;
+	}
+	
 .button p{
 	display: inline;
 	padding: 25px;
@@ -229,8 +238,8 @@ p {
 
 #toggle {
 	position: absolute;	
-	top:7%;
-	right: 13.5%;
+	top:40px;
+	right: 130px;
 	z-index: 1;
 	font-size: .9em;
 	color: white;
@@ -238,15 +247,19 @@ p {
 	padding: 30px;
 }
 
+#toggle:hover {
+	color: black;
+}
+
 #popUpWrapper {
-	width: 90%;
+	width: 1000px;
 	position: fixed;
 	bottom: 0;
 	margin-left: auto;
 	margin-right: auto;
 	left: 0;
 	right: 0;
-	height: 90%;
+	height: 650px;
 	transition: all .7s ease-in-out;	
 }
 
@@ -258,7 +271,7 @@ p {
 }
 
 .negativeMargin {
-	margin-bottom: -45%;
+	margin-bottom: -35%;
 }
 #background {
 	width: 100%;
@@ -305,7 +318,7 @@ p {
 }
 
 #interactionHost {
-    position      : absolute;
+    position      : fixed;
     overflow      : auto;
     margin        : 0;
     border-bottom : none;
@@ -379,7 +392,7 @@ p {
 
 #footer {
     font-size : .6em;
-    width: 50%;
+    width: 40%;
     padding: 2%;
     position: absolute;
     bottom: 0;
@@ -421,135 +434,232 @@ p {
 	color:#409149;
 }
 
-@media screen and (max-width: 900px) and (min-width: 501px){
-	
-	#host {
-		position: relative;
-		top: 0;
-		right: 0;
-		width: 100%;
-		overflow: auto;
+@media screen and (max-width: 999px){
+	#popUpWrapper {
+		width: 800px;
+		height: 450px;
 	}
 	
-	#background {
-		position: relative;
-		height: auto;
+	#toggle {
+		top: 16px;
+		right: 100px;
+		font-size: .7em;
 	}
 	
-	#wrapper {
-		width: 100%;
-	}
-	
-	#inventoryHostWrapper {
-		position: relative;
-		top: 0;
-		margin: 0;
-	}
-	
-	#imageHostWrapper {
-		position: relative;
-		top: 0;
-		left: 0;
-		float: right;
-		margin-right: 5%;
-	}
-	
-	#footer {
-		bottom: 0;
-		position: relative;
-		margin-top: 25%;
-		width: 50%;
-		padding: 2% 2% 2% 0;
-	}
-}
-
-@media screen and (max-width: 500px) {
-	 
-	 #wrapper {
-		 width: 100%;
-		 float:	none;
-	 }
-	 
-	 #host {
-		 width: 100%;
-		 height: 100%;
-		 position: relative;
-		 bottom: auto;
-		 right: auto;
-		 overflow: auto;	 }
-	 
-	 #background {
-		 width: 100%;
-		 position: relative;
-	 }
-	 
-	 #sidebar {
-		 width: 100%;
-		 height: auto;
-		 position: relative;
-	 }
-	 
-	 #sidebar div {
-		 
-		 
-	 }
-	 #titleWrapper {
-		 font-size: medium;
-		 width: 100%;
-		 height: auto;
-		 position: fixed;
-		 top: 0;
-		 left: 0;
-		 display: inline;
-		 background-color: #bebebe;
-		 padding: 10px;
-	 }
-	
-	#title {
-		font-size: 18px;
-		text-align: left;
-	}
-	
-	#imageHostWrapper {
-		position: relative;
-		top: 0;
-		left: 0;
-		text-align: right;
-		margin: 0 3% 0 0;
-	}
-	
-	#inventoryHostWrapper h2{
-		font-size: 10px;
-		
-	}
-	
-	#inventoryHostWrapper {
-		margin: 0 0 0 2%;
-		position: relative;
-		top: 0;
-		left: 0;
-		width: 30%;
-		float: left;
+	#imageHostWrapper img {
+		height: 160px;
 	}
 	
 	#inventoryHost li {
-		font-size: 9px;
+		font-size: 12px;
 	}
 	
-	#inventoryHost {
-	margin: 0 0 0 2%;
-	height: 150px;
-	overflow-y: auto;
+	#host {
+		width: 300px;
+		font-size: 12px;
+		right: 85px;
+		top: 110px;
 	}
 	
-	#footer {
-		font-size: 9px;
-		position: relative;
-		margin: 0 0 2% 2%;
-		bottom: 0;
-		left: 0;
-		clear: both;
+	#negativeMargin {
+		margin-bottom: -25%;
+	}
+
+@media screen and (max-width: 800px){
+
+	.move {
+		width: 40%;
+	}
+
+	#backgroundImage {
+		
+		max-width: 100%;
+	    max-height: 100%;
+	    bottom: 0;
+	    left: 0;
+	    margin: auto;
+	    overflow: auto;
+	    position: fixed;
+	    right: 0;
+	    top: 0;
+	    border-top: 10px solid gold;
+	    border-bottom: 20px solid goldenrod;
+	}
+	
+	#popUpWrapper {
+		width: 600px;
+		height: 450px;
+	}
+	
+	#toggle {
+		top: 48px;
+		right: 62px;
+		font-size: .6em;
+	}
+	
+	#imageHostWrapper img {
+		height: 125px;
+	}
+	
+	#imageHostWrapper {
+		left: 13%;
+		top: 33%;
 		
 	}
 	
+	#inventoryHost li {
+		font-size: 10px;
+	}
+	
+	#host {
+		width: 220px;
+		font-size: 10px;
+		right: 64px;
+		top: 130px;
+	}
+	
+	#negativeMargin {
+		margin-bottom: -25%;
+	}
+	
+@media screen and (max-width: 600px){
+	
+	#popUpWrapper {
+		width: 480px;
+		height: 450px;
+	}
+	
+	#toggle {
+		top: 118px;
+		right: 43px;
+		font-size: .5em;
+	}
+	
+	#host {
+		width: 170px;
+		font-size: 10px;
+		right: 61px;
+		top: 195px;
+		height: 230px;
+	}
+	
+	#imageHostWrapper {
+		top: 46%;
+	}
+	
+	#inventoryHostWrapper {
+		top: 75%;
+		left: 13%;
+	}
+	
+	#inventoryHost li {
+		
+		font-size: 8px;
+	}
+	
+	#inventoryHostWrapper h2 {
+		
+		font-size: 10px;
+	}
+	
+	#footer {
+		font-size: .5em;
+	}
+	
+}
+	
+@media screen and (max-width: 500px){
+
+	.move {
+		width: 60%;
+	}
+
+	body {
+		background-image: none;
+		
+	}
+	#background {
+		position: relative;
+		
+	}
+	
+	.negativeMargin {
+		margin-bottom: 0;
+	}
+	
+	#backgroundImage {
+		
+		position: relative;
+	}
+	
+	#popUpWrapper {
+		width: 100%;
+		height: auto;
+		position: relative;
+	}
+	
+	#toggle {
+		display: none;
+	}
+	
+	#popUpImg {
+		display: none;
+	}
+	
+	#imageHostWrapper img {
+		display: none;
+	}
+	
+	#imageHostWrapper {
+		display: none;
+		
+	}
+	
+	#inventoryHost li {
+		font-size: 10px;
+	}
+	
+	#host {
+		width: 100%;
+		font-size: 10px;
+		position: relative;
+		right: 0;	
+		top:0;
+		overflow-y: auto;
+		height: auto;
+	}
+	
+	#interactionHost {
+		background-color: black;
+	}
+	
+	#inventoryHost {
+		position: relative;
+	}
+	
+	#inventoryHost ul li {
+		text-align: right;
+	}
+	
+	#inventoryHost li {
+		float: none;
+	}
+	
+	#inventoryHostWrapper {
+		position: relative;
+		text-align: right;
+		top: 0;
+		left: 0;
+		padding: 15px;
+	}
+	
+	#negativeMargin {
+		margin-bottom: -25%;
+	}
+	
+	#footer {
+		position: relative;
+		left: 0;
+		padding: 15px;
+	}
 }

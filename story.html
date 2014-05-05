@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>SIGMUND'S QUEST</title>
     <link rel="stylesheet" href="css/story.css">
-    <script src="js/doT.js"></script>
-    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/DoT.js"></script>
+    <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/dedalus.js"></script>
     <script src="js/dedalus-web.js"></script>
     <script src="js/jquery.scrollTo.min.js"></script>
@@ -43,7 +43,11 @@
         <afterEveryPageTurn>
 	       	$('html, body').animate({
 	       			scrollTop: $("#wrapper").offset().top 
-	       				}, 500);	
+	       				}, 500);
+	       				
+	       	$('html, body').animate({
+	       			scrollTop: $("#host").offset().top
+	       				}, 100);	
 	       				
         
         </afterEveryPageTurn>
@@ -421,7 +425,7 @@
 	    <div id="undoStageHost"></div>
 	
 	    <div id="footer">
-	        <!--<a id="undoHost" href="#">Undo</a> &bull; <a id="saveHost" href="#">Save</a> &bull; <a id="restoreHost" href="#">Restore</a> &bull;--> <a id="resteHost" href="#">Reset</a> 
+	        <!--<a id="undoHost" href="#">Undo</a> &bull; <a id="saveHost" href="#">Save</a> &bull; <a id="restoreHost" href="#">Restore</a> &bull;--> <a id="resteHost" href="#">Reset</a> | <a href="about.html">About</a>
 	    </div>
     
     </div>
