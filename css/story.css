@@ -509,6 +509,11 @@ p {
 	.move {
 		width: 40%;
 	}
+	
+	#aboutPageText {
+		font-size: 12px;
+		top: 5%;
+	}
 
 	#backgroundImage {
 		
