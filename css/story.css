@@ -22,7 +22,7 @@ font-size-adjust: auto;
 html, body {
 	min-height: 100%;
 	background-color: white;
-	font-family: 'Press Start 2P', cursive;
+	font-family: 'Press Start 2P', sans-serif;
 }
 
 body {
